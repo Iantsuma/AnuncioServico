@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Perfil Publico</title>
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+	<div class="container">
+		<h2 class="title">Perfil Publico</h2>
+		<form action="/publico" method="post">
+			<label for="name">Nome Publico *</label>
+			<input type="text" id="name" name="name" value="" maxlength="80">
+
+			<label for="endereco">Endereço</label>
+			<input type="text" id="endereco" name="endereco" value=""  maxlength="80">
+
+            <label for="contato">Contato *</label>
+			<input type="text" id="contato" name="contato" value="" maxlength="80">
+
+            <label for="valor_pagar">Valor a Pagar *</label>
+			<input type="text" id="valor_pagar" name="valor_pagar" value="" maxlength="80">
+
+            <label for="descricao">Descrição</label>
+			<input type="text" id="descricao" name="descricao" value="" maxlength="80">
+			
+			<div class="field">
+                <label for="servico">Tipo do Serviço *</label>
+                <select id="servico" name="servico">
+                  <option value="">Selecione um tipo de serviço</option>
+                  <option value="Free Lance">Free Lance</option>
+                  <option value="Emprego">Emprego </option>
+                  <option value="Vaga">Vaga</option>
+                </select>
+              </div>
+
+			<button id="botao" name="botao" type="submit">Registrar</button> 
+		
+	</div>
+</form>
+</body>
+</html>

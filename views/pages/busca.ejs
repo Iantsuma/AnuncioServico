@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados da Busca</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  margin: 0;
+}
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Resultados da Busca</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Descricao</th>
+        <th>Contato</th>
+        <th>Valor</th>
+        <th>Endereço</th>
+        <th>Tipo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- loop para exibir os resultados -->
+      <% results.forEach(function(result) { %>
+        <tr>
+          <td><%= result.nome %></td>
+          <td><%= result.descricao %></td>
+          <td><%= result.contato %></td>
+          <td><%= result.valor %></td>
+          <td><%= result.endereco %></td>
+          <td><%= result.tipo %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>

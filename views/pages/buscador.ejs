@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pesquisar</title>
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+	<div class="container">
+		<h2 class="title">Pesquisar Perfis </h2>
+		<form action="/busca" method="post">
+
+            <label for="documento"></label>
+			<input type="text" id="documento" name="documento" value="" maxlength="80">
+
+            <div class="field">
+                <label for="servico">Tipo do Serviço</label>
+                <select id="servico" name="servico">
+                  <option value="">Selecione um tipo de serviço</option>
+                  <option value="Free Lance">Free Lance</option>
+                  <option value="Emprego">Emprego </option>
+                  <option value="Vaga">Vaga</option>
+                </select>
+              </div>
+
+			<button id="logar" name="logar" type="submit">Pesquisar</button> 
+		
+	</div>
+</form>
+</body>
+</html>
