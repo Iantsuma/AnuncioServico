@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Avaliação</title>
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+	<div class="container">
+		<h2 class="title">Avaliação</h2>
+		<form action="/aval" method="post">
+            <label for="documento">Nome</label>
+			<input type="text" id="documento" name="documento" value="" maxlength="80">
+			
+			<label for="aval">Avaliação</label>
+			<input type="text" id="aval" name="aval" value="" maxlength="80">
+
+			<button id="logar" name="logar" type="submit">Avaliar</button> 
+		
+	</div>
+</form>
+<script>
+    let aviso ="<%= aviso  %>" 
+    if(aviso != 0){
+        alert(aviso)
+    }
+</script>
+</body>
+</html>
