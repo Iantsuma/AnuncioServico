@@ -51,6 +51,9 @@ app.get('/', (req, res) => {
     if(req.body.hasOwnProperty("busca")){
       return res.redirect("/busca")
   }
+  if(req.body.hasOwnProperty("aval")){
+    return res.redirect("/aval")
+}
   })
 //////////////////////////////////////////////////////////////////////////////////////
 //REGISTRO
@@ -312,6 +315,23 @@ app.get('/resposta', async (req, res) => {
 
      return res.render('pages/cartao.ejs',{aviso : "Cartão invalido"})
       })
+    
+    app.get('/aval', async (req, res) => {
+        res.render('pages/avaliacao.ejs',{aviso : 0})
+        })
+    
+        app.post('/aval', async (req, res) => {
+    
+          var avaliação = req.body.aval
+          console.log(avaliação)
+    
+         if(avaliação < -1 || avaliação > 5){
+            
+            return res.render('pages/avaliacao.ejs',{aviso : "Por favor a avaliação deve ser entre 0 e 5"})
+         } 
+    
+         res.redirect("/")
+        })
 
 
   function TestaCPF(strCPF) {
@@ -359,6 +379,35 @@ function validarCartaoCredito(numeroCartao) {
 
   return soma % 10 === 0;
 }
+
+
+const nodemailer = require('nodemailer');
+
+// Configurações de transporte
+const transporter = nodemailer.createTransport({
+  service: 'hotmail',
+  auth: {
+    user: 'aabbcc66dd@outlook.com',
+    pass: 'senhaforte'
+  }
+});
+
+// Configurações do email
+const mailOptions = {
+  from: 'aabbcc66dd@outlook.com',
+  to: 'vinimazcy@gmail.com',
+  subject: 'Nota fiscal',
+  text: 'nota.pdf'
+};
+
+// Enviar email
+transporter.sendMail(mailOptions, function(error, info) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email enviado: ' + info.response);
+  }
+});
 
  
 
